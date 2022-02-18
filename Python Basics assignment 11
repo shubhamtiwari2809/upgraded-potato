@@ -1,0 +1,101 @@
+Python Assignment 11 Basics (practical)
+
+
+1:
+
+
+def test(sentence,k):
+    l = []
+    for word in sentence.split():
+        if len(word) > k:
+            l.append(word)
+    return l
+    
+
+2:
+
+
+def test1(sentence):
+    sentence = sentence.lower()
+    new_sentence = sentence.replace('i','')
+    return new_sentence
+    
+   
+3:
+
+
+def splitandjoin(string):
+    splitted_string = string.split()
+    # suppose we wan't to join the string with '#'
+    character = '#'
+    joined_string = character.join(string)
+    return splitted_string,joined_string
+    
+    
+4:
+
+
+def binary(string):
+    for i in string:
+        if (i!='0') and (i!='1'):
+            return '{} is not a binary string'.format(string)
+            
+    else:
+        return '{} is a binary string'.format(string)
+        
+        
+5:
+
+
+def uncommon(string1,string2):
+    l = []
+    string1 = string1.split()
+    string2 = string2.split()
+    for word in string1:
+        if word not in string2:
+            l.append(word)
+    for word in string2:
+        if word not in string1:
+            l.append(word)
+    return l
+    
+    
+6:
+
+
+def duplicate(string):
+    
+    unique_str = ''
+    duplicate_str = ''
+    
+    for i in string:
+        if i not in unique_str:
+            unique_str = unique_str + i
+        else:
+            if i not in duplicate_str:
+                duplicate_str = duplicate_str + i
+            
+    return duplicate_str
+    
+    
+    
+7:
+
+
+def specialcharacters(string):
+    
+    alphabets = []
+    numbers = []
+    for i in range(97,123):
+        alphabets.append(chr(i))
+    for i in range(0,10):
+        numbers.append(str(i))
+        
+    for i in string:
+        if (i.lower() not in alphabets) and (i not in numbers):
+            return '{} contains  special character'.format(string)
+    else:
+        return '{} does not contain any special character'.format(string)
+        
+        
+        
